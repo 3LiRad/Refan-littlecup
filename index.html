@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's For Refan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+</head>
+<body>
+    <div class="heart-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+    <div class="message-container">
+        <h1>To My Little Cup, Refan 💖</h1>
+        <p id="poem">"From Riyadh to Jeddah, my heart beats only for you.  
+        Every moment I think of you, it's like a dream come true.  
+        Though we're apart, my feelings stay true,  
+        Leo's heart will always be with you, my Little Cup, it's you!"</p>
+        <p id="message">Will you be my Valentine? 💌</p>
+        <a href="https://www.example.com" target="_blank" id="link">Click here for more... 🌹</a>
+    </div>
+
+    <script>
+        // Heart animation
+        anime({
+            targets: '.heart',
+            scale: [1, 1.5, 1],
+            rotate: ['0deg', '45deg', '0deg'],
+            easing: 'easeInOutQuad',
+            duration: 2000,
+            loop: true,
+            delay: anime.stagger(300)
+        });
+
+        // Poem fade-in animation
+        anime({
+            targets: '#poem',
+            opacity: [0, 1],
+            easing: 'easeInOutQuad',
+            duration: 3000,
+            delay: 500
+        });
+
+        // Heart beat animation
+        anime({
+            targets: '#message',
+            scale: [1, 1.1],
+            easing: 'easeInOutQuad',
+            duration: 1000,
+            loop: true,
+            direction: 'alternate',
+            delay: 500
+        });
+    </script>
+</body>
+</html>
