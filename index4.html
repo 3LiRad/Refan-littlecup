@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's For Refan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+    <style>
+        /* Basic reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Background animation for hacker mask look */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #0f0, #fff, #00ff00);
+            background-size: 200% 200%;
+            animation: gradientMove 5s ease infinite, scanline 3s linear infinite;
+        }
+
+        /* Animating the hacker's 'mask' effect */
+        @keyframes gradientMove {
+            0% {
+                background-position: 200% 200%;
+            }
+            100% {
+                background-position: 0 0;
+            }
+        }
+
+        @keyframes scanline {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Heart container styles */
+        .heart-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: space-around;
+            width: 200px;
+            height: 200px;
+        }
+
+        .heart {
+            width: 50px;
+            height: 50px;
+            background-color: #ff3366;
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+            transform-origin: center;
+        }
+
+        .message-container {
+            text-align: center;
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin: 10px 0;
+        }
+
+        a {
+            font-size: 1.5rem;
+            color: #ff3366;
+            text-decoration: none;
+            border: 2px solid #ff3366;
+            padding: 10px 20px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        a:hover {
+            background-color: #ff3366;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background animation -->
+    <div class="background"></div>
+
+    <div class="heart-container">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+
+    <div class="message-container">
+        <h1>To My Little Cup, Refan 💖</h1>
+        <p id="poem">"From Riyadh to Jeddah, I've been tracing your IP,<br>
+        But don't worry, Little Cup, you’re encrypted to me.<br>
+        I’ve decoded your smile, it’s my favorite encryption,<br>
+        But I can’t seem to break through this sweet temptation.<br><br>
+
+        My firewall’s strong, but you’re a perfect breach,<br>
+        A vulnerability I can’t help but reach.<br>
+        Though we’re not yet connected, there’s a signal I feel,<br>
+        And in this digital world, it’s all too real.<br><br>
+
+        Will you be my Valentine? A perfect match, you see,<br>
+        Or should I just hack my way into your heart, endlessly?"</p>
+        <p id="message">Will you be my Valentine? 💌</p>
+        <a href="https://youtu.be/UufLX7pR7ZE?si=sVJxFkBhdAaMln2B" target="_blank" id="link">Click here for more... 🌹</a>
+    </div>
+
+    <script>
+        // Heart animation
+        anime({
+            targets: '.heart',
+            scale: [1, 1.5, 1],
+            rotate: ['0deg', '45deg', '0deg'],
+            easing: 'easeInOutQuad',
+            duration: 2000,
+            loop: true,
+            delay: anime.stagger(300)
+        });
+
+        // Poem fade-in animation
+        anime({
+            targets: '#poem',
+            opacity: [0, 1],
+            easing: 'easeInOutQuad',
+            duration: 3000,
+            delay: 500
+        });
+
+        // Heart beat animation
+        anime({
+            targets: '#message',
+            scale: [1, 1.1],
+            easing: 'easeInOutQuad',
+            duration: 1000,
+            loop: true,
+            direction: 'alternate',
+            delay: 500
+        });
+    </script>
+</body>
+</html>
